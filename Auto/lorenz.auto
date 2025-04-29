@@ -1,0 +1,20 @@
+
+#==============
+# AUTO lorenz
+#==============
+
+print "\n***Compute stationary solution families***"
+eq=run('lorenz')
+save('eq')
+
+print "\n***Compute the first periodic solution family***"
+per1=run(eq('HB1'),IPS=2,ICP=['rho','PERIOD',4],NMX=35,NPR=2,DS=0.5)
+append('per1')
+
+print "\n***Compute the second periodic solution family***"
+per2=run(eq('HB2'),IPS=2,ICP=['rho','PERIOD',4],NMX=35,NPR=2,DS=0.5)
+append('per2')
+
+#print "\n***Clean the directory***"
+#clean()
+
